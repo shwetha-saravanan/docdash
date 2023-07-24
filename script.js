@@ -286,3 +286,51 @@ document.addEventListener("DOMContentLoaded", function () {
     renderPatientList();
     renderOGTTCharts();
 });
+ // Function to render patient details in the dashboard
+  function renderPatientDetails(patient) {
+    const patientDetailsContainer = document.querySelector(
+      ".patient-details-container"
+    );
+
+    // Clear previous patient details
+    patientDetailsContainer.innerHTML = "";
+
+    // Create patient details elements
+    const patientName = document.createElement("h2");
+    patientName.textContent = patient.name;
+    const patientAge = document.createElement("p");
+    patientAge.textContent = `Age: ${patient.age}`;
+    const patientWeight = document.createElement("p");
+    patientWeight.textContent = `Weight: ${patient.weight} kg`;
+    const patientPhone = document.createElement("p");
+    patientPhone.textContent = `Phone: ${patient.phone}`;
+    const patientEmail = document.createElement("p");
+    patientEmail.textContent = `Email: ${patient.email}`;
+
+    // Append patient details elements to the container
+    patientDetailsContainer.appendChild(patientName);
+    patientDetailsContainer.appendChild(patientAge);
+    patientDetailsContainer.appendChild(patientWeight);
+    patientDetailsContainer.appendChild(patientPhone);
+    patientDetailsContainer.appendChild(patientEmail);
+  }
+
+  // Function to navigate back to the patient list
+  function navigateBackToPatientList() {
+    const patientDashboard = document.querySelector(".patient-dashboard");
+    const patientDetailsContainers = document.querySelectorAll(
+      ".patient-details"
+    );
+
+    patientDetailsContainers.forEach((detailsContainer) => {
+      detailsContainer.style.display = "none";
+    });
+
+    patientDashboard.style.display = "none";
+  }
+
+  // Event listener for back button to return to patient list
+  const backButton = document.getElementById("back-button");
+  backButton.addEventListener("click", navigateBackToPatientList);
+});
+
