@@ -1,120 +1,55 @@
-<!-- patients.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-    <title>Doctor Dashboard - Patients List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+  <title>Doctor's Dashboard</title>
+  <!-- Add any CSS styling links here -->
 </head>
 <body>
-    <section id="sidebar">
-        <a href="#" class="brand"><i class='bx bxs-smile icon'></i> GDM Analyzer</a>
-        <ul class="side-menu">
-            <li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
-            <li class="divider" data-text="main">Main</li>
-            <li>
-                <a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="#">Age</a></li>
-                    <li><a href="#">BMI</a></li>
-                    <li><a href="#">Pregnancy Month</a></li>
-                    <li><a href="#">OGTT 1h/2h</a></li>
-                    <li><a href="#">GDM/Non-GDM</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
-            <li><a href="#"><i class='bx bxs-widget icon' ></i> Widgets</a></li>
-            <li class="divider" data-text="table and forms">Table and forms</li>
-            <li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
-            <li>
-                <a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="#">Basic</a></li>
-                    <li><a href="#">Select</a></li>
-                    <li><a href="#">Checkbox</a></li>
-                    <li><a href="#">Radio</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="ads">
-            <div class="wrapper">
-                <a href="#" class="btn-upgrade">Upgrade</a>
-                <p>Become a <span>PRO</span> member and enjoy <span>All Features</span></p>
-            </div>
-        </div>
-    </section>
+  <h1>Welcome to Doctor's Dashboard</h1>
+  <div class="patient-list">
+    <h2>Patients List</h2>
+    <div class="patient-box" data-patient-id="1">Patient 1</div>
+    <div class="patient-box" data-patient-id="2">Patient 2</div>
+    <div class="patient-box" data-patient-id="3">Patient 3</div>
+    <div class="patient-box" data-patient-id="4">Patient 4</div>
+    <div class="patient-box" data-patient-id="5">Patient 5</div>
+  </div>
 
-    <section id="content">
-        <!-- NAVBAR -->
-        <nav>
-            <i class='bx bx-menu toggle-sidebar' ></i>
-            <form action="#">
-                <div class="form-group">
-                    <input type="text" placeholder="Search...">
-                    <i class='bx bx-search icon' ></i>
-                </div>
-            </form>
-            <a href="#" class="nav-link">
-                <i class='bx bxs-bell icon' ></i>
-                <span class="badge">5</span>
-            </a>
-            <a href="#" class="nav-link">
-                <i class='bx bxs-message-square-dots icon' ></i>
-                <span class="badge">8</span>
-            </a>
-            <span class="divider"></span>
-            <div class="profile">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-                <ul class="profile-link">
-                    <li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
-                    <li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
-                    <li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- NAVBAR -->
+  <div class="patient-dashboard" style="display: none;">
+    <button id="back-button">Back to Patient List</button>
+    <div class="patient-details">
+      <h2>Patient Details</h2>
+      <div class="patient-details-container">
+        <!-- Patient details will be displayed here -->
+          	<ul class="side-menu">
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Age</a></li>
+					<li><a href="#">BMI</a></li>
+					<li><a href="#">Pregnancy Month</a></li>
+					<li><a href="#">OGTT 1h/2h</a></li>
+				        <li><a href="#">GDM/Non-GDM</a></li>
 
-        <!-- MAIN -->
-        <main>
-            <h1 class="title">Doctor Dashboard</h1>
-            <ul class="breadcrumbs">
-                <li><a href="#">Home</a></li>
-                <li class="divider">/</li>
-                <li><a href="#" class="active">Dashboard</a></li>
-            </ul>
-            <div class="patient-list">
-                <h2>Patients List</h2>
-                <div class="patient-box" onclick="navigateToPatientDashboard(1)">
-                    <img src="https://via.placeholder.com/150" alt="Patient 1">
-                    <p>Emily Johnson</p>
-                </div>
-                <div class="patient-box" onclick="navigateToPatientDashboard(2)">
-                    <img src="https://via.placeholder.com/150" alt="Patient 2">
-                    <p>Susan Williams</p>
-                </div>
-                <div class="patient-box" onclick="navigateToPatientDashboard(3)">
-                    <img src="https://via.placeholder.com/150" alt="Patient 3">
-                    <p>Michael Smith</p>
-                </div>
-                <div class="patient-box" onclick="navigateToPatientDashboard(4)">
-                    <img src="https://via.placeholder.com/150" alt="Patient 4">
-                    <p>John Doe</p>
-                </div>
-                <div class="patient-box" onclick="navigateToPatientDashboard(5)">
-                    <img src="https://via.placeholder.com/150" alt="Patient 5">
-                    <p>Jane Smith</p>
-                </div>
-            </div>
-            
-        </main>
-        <!-- MAIN -->
-        
-    </section>
+				</ul>
+			</li>
+      </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="script.js"></script>
+    <div class="ogtt-charts">
+      <h2>OGTT Charts</h2>
+      <!-- Charts will be displayed here -->
+    </div>
+  </div>
+
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="script.js"></script>
+  <!-- Add any script tags for JavaScript code -->
 </body>
 </html>
